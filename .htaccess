@@ -1,0 +1,4 @@
+# Allows serving from the project root under Apache; document root should preferably be /public.
+RewriteEngine On
+RewriteRule ^$ public/ [L]
+RewriteRule (.*) public/$1 [L]
