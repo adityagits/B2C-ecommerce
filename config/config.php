@@ -10,6 +10,12 @@ return [
         'pass'    => getenv('DB_PASS') !== false ? getenv('DB_PASS') : '',
         'charset' => 'utf8mb4',
     ],
+    'company' => [
+        'name'    => 'ShopEasy Ltd.',
+        'address' => '123 Market Street, Springfield',
+        'email'   => 'billing@shopeasy.example',
+        'tax_id'  => 'TAX-000000',
+    ],
     'currency'      => '$',
     'per_page'      => 8,
     'shipping_flat' => 5.00,

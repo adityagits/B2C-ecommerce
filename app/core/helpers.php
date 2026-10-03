@@ -90,3 +90,13 @@ function is_admin(): bool
 {
     return (auth_user()['role'] ?? '') === 'admin';
 }
+
+function status_label(?string $status): string
+{
+    return ucfirst(str_replace('_', ' ', (string) $status));
+}
+
+function status_tag(?string $status): string
+{
+    return '<span class="tag tag-' . e($status) . '">' . e(status_label($status)) . '</span>';
+}

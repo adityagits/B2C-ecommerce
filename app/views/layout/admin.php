@@ -13,6 +13,9 @@
         <a href="<?= url('admin') ?>">Dashboard</a>
         <a href="<?= url('admin/products') ?>">Products</a>
         <a href="<?= url('admin/orders') ?>">Orders</a>
+        <a href="<?= url('admin/invoices') ?>">Invoices</a>
+        <a href="<?= url('admin/payments') ?>">Payments</a>
+        <a href="<?= url('admin/keys') ?>">Keys</a>
         <a href="<?= url('/') ?>">← View store</a>
         <form action="<?= url('logout') ?>" method="post"><?= csrf_field() ?><button class="link" type="submit">Logout</button></form>
     </aside>

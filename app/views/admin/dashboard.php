@@ -3,6 +3,7 @@
     <div class="card stat"><span class="muted">Revenue</span><strong><?= money($stats['revenue']) ?></strong></div>
     <div class="card stat"><span class="muted">Orders</span><strong><?= $stats['orders'] ?></strong></div>
     <div class="card stat"><span class="muted">Pending</span><strong><?= $stats['pending'] ?></strong></div>
+    <div class="card stat"><span class="muted">To ship</span><strong><?= $stats['to_ship'] ?></strong></div>
     <div class="card stat"><span class="muted">Products</span><strong><?= $stats['products'] ?></strong></div>
     <div class="card stat"><span class="muted">Customers</span><strong><?= $stats['customers'] ?></strong></div>
 </div>
@@ -11,7 +12,7 @@
     <thead><tr><th>Order</th><th>Customer</th><th>Status</th><th>Total</th><th></th></tr></thead>
     <tbody>
     <?php foreach ($recent as $o): ?>
-        <tr><td>#<?= (int) $o['id'] ?></td><td><?= e($o['customer_name']) ?></td><td><span class="tag tag-<?= e($o['status']) ?>"><?= e(ucfirst($o['status'])) ?></span></td><td><?= money($o['total']) ?></td><td><a href="<?= url('admin/orders/' . $o['id']) ?>">Manage</a></td></tr>
+        <tr><td>#<?= (int) $o['id'] ?></td><td><?= e($o['customer_name']) ?></td><td><?= status_tag($o['status']) ?></td><td><?= money($o['total']) ?></td><td><a href="<?= url('admin/orders/' . $o['id']) ?>">Manage</a></td></tr>
     <?php endforeach; ?>
     <?php if (!$recent): ?><tr><td colspan="5" class="muted">No orders yet.</td></tr><?php endif; ?>
     </tbody>
